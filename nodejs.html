@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Discord Bot | Noel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Main</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="python.html">Python</a></li>
+							<li class="active"><a href="nodejs.html">NodeJS</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.twitter.com/code_calvin" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.instagram.com/codecalvin_yt" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://www.github.com/code-calvin" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">March 05, 2021</span>
+									<h1>How I built a<br />
+									Discord Bot</h1>
+									<p>What is a Discord Bot? A discord bot is a bot user designed to automate tasks. <br>
+									This bot can do anything a user can do. It uses code, in this case javascript, <br>
+									which the developer can use to calculate anything not discord related, or discord related
+								</p>
+								</header>
+								<div class="image main"><img src="images/check.png" alt="nodejs Discord Bot" /></div>
+							
+								<p>
+                                    I built a Ticket Bot, which can create, and delete channels. To start off, I defined
+                                    the guild, parent category, and then created a channel under that category. The goals
+                                    for this project were: <br>
+									1. Get input from the user (reactions) <br>
+									2. Create a channel under the category Tickets <br>
+									3. Send a message in the channel, when it is created <br>
+									4. Be able to delete the ticket (channel) with a reaction <br>
+									5. Make it so it can not crash (infinite lifetime program) <br>
+								</p>
+
+								<p>
+									With that in mind, I could break this problem even further. To take the input I could
+                                    use the discord.js event called <i>"messageReactionAdd"</i>. This would allow the bot
+                                    to run code after a reaction. If they reacted to the correct emoji, in the correct channel,
+                                    it created a channel under the <i>Tickets</i> category.
+								</p>
+								
+								<p>
+                                    Once the channel had been created, the bot sent a message notifying all staff about the ticket.
+                                    This part was crucial as the staff might not notice, and a ticket means support ticket. Then, the
+                                    staff could talk to the user. Once the issue was resolved, the could react to an emoji which the
+                                    bot reacted to on their first message. This deletes the channel, and closes the ticket. We do not
+                                    want to delete a random channel, so I used a javascript Map() to determine whether the channel was
+                                    a ticket or not. When the channel was created, it would be added. When the person reacted, it checks
+                                    if the channel was a <i>Ticket</i>. If so, the channel could be deleted. If not, the reaction command
+                                    would not continue.
+								</p>
+
+							</section>
+
+					</div>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
